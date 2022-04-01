@@ -215,7 +215,7 @@ class _ItemTagsState extends State<ItemTags> {
 
     final double fontSize = widget.textStyle.fontSize!;
 
-    Color color = widget!.active ? widget.activeColor : widget.color;
+    Color color = widget.active ? widget.activeColor : widget.color;
 
     if (_dataList!.showDuplicate) color = widget.colorShowDuplicate;
 
