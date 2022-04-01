@@ -215,7 +215,7 @@ class _ItemTagsState extends State<ItemTags> {
 
     final double fontSize = widget.textStyle.fontSize!;
 
-    Color color = _dataList!.active ? widget.activeColor : widget.color;
+    Color color = widget!.active ? widget.activeColor : widget.color;
 
     if (_dataList!.showDuplicate) color = widget.colorShowDuplicate;
 
@@ -246,7 +246,7 @@ class _ItemTagsState extends State<ItemTags> {
                   _singleItem(_dataListInherited!, _dataList);
                   _dataList!.active = true;
                 } else
-                  _dataList!.active = !_dataList!.active;
+                  _dataList!.active = !widget.active;
 
                 if (widget.onPressed != null)
                   widget.onPressed!(Item(
@@ -430,7 +430,7 @@ class _ItemTagsState extends State<ItemTags> {
   ///TextStyle
   TextStyle get _textStyle {
     return widget.textStyle.apply(
-      color: _dataList!.active ? widget.textActiveColor : widget.textColor,
+      color: widget.active ? widget.textActiveColor : widget.textColor,
     );
   }
 
